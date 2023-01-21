@@ -4,7 +4,7 @@ const express=require('express')
 const hbs=require('hbs')
 const geocode=require('./utils/geocode')
 const forecast=require('./utils/forecast')
-
+const cors=require('cors')
 
 const app= express() // express ekta function but eta kono argument nai, eta server k various method provide kore application er madhhome.
 const  viewsPath=path.join(__dirname,'../templates/views')
@@ -16,6 +16,7 @@ app.set('views',viewsPath)
 
 hbs.registerPartials(partialsPath)
 
+app.use(cors())
 app.use(express.static(publicdirectoryPath)) 
 
  app.get('',(req,res)=>{
