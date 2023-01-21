@@ -38,7 +38,7 @@ weatherForm.addEventListener('submit',(event)=>{  // addeventlistener er first a
    
  
  
-    fetch('http://localhost:3000/weather?address='+location).then((response)=>{
+    fetch('https://weather-app-4ykn.onrender.com/weather?address='+location).then((response)=>{
        response.json().then((data)=>{
         if(data.error){
             messageOne.textContent=data.error
